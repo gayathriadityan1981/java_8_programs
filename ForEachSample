@@ -1,0 +1,40 @@
+import java.util.*;
+import  java.util.stream.Collectors;  
+
+class Product {
+    private int productId;
+    private String productName;
+    private double price;
+    
+    public  Product(int productId,String productName,double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.price = price;
+    }
+    public String getProductName() {
+        return productName;
+    }
+     public int getProductId() {
+        return productId;
+    }
+     public double getPrice() {
+        return price;
+    }
+}
+class ForEachSample {
+    public static void main(String[] args) {
+        /* ForEach Sample program
+        */
+        List<Product> pdtList = new ArrayList<>();
+        pdtList.add(new Product(1,"Samsung Galaxy",12500.50));
+        pdtList.add(new Product(2,"Oppo",10500.50));
+        pdtList.add(new Product(3,"Apple Iphone",112500.50));
+        pdtList.add(new Product(4,"Nokia",16500.50));
+         pdtList.add(new Product(5,"Oppo",10100.50));
+     pdtList.stream()
+        .filter(i-> i.getProductName().equalsIgnoreCase("Oppo"))
+        .forEach(product->System.out.println(product));
+        
+         
+    }
+}

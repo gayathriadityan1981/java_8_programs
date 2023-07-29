@@ -1,0 +1,14 @@
+package main.java;
+
+import java.util.List;
+import java.util.Arrays;
+
+public class FilterEvenNumbers {
+	
+	public static void main(String args[]) {
+		List<Integer> intList = Arrays.asList(1,2,3,4,5,6);
+		intList.stream().filter(n->n%2==0)
+		.forEach(System.out::println);
+	}
+
+}

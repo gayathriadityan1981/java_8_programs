@@ -1,0 +1,9 @@
+
+Connection dbConnect = DriverManager.getConnection("db-url", "db-user", "db-password");
+try (dbConnect; ResultSet rs = dbConnect.createStatement().executeQuery("select * from mytable")) {
+    while (rs.next()) {
+       //read results from rs
+    }
+} catch (SQLException e) {
+     e.printStackTrace();
+}
